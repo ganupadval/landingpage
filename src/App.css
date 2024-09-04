@@ -18,12 +18,6 @@
   );
 }
 
-@media only screen and (max-width: 600px) {
-  .chart {
-    max-width: -webkit-fill-available;
-  }
-}
-
-.chart {
-  max-width:640px;
+.chart{
+  max-width: -webkit-fill-available;
 }

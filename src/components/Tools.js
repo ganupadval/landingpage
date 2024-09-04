@@ -36,7 +36,7 @@ export default function Tools() {
          
         </div> */}
         <div className="flex">
-          <div className="grid m-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid p-4 m-auto grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Article Generator", icon: "📄" },
               { title: "Blog Post Writer", icon: "📝" },

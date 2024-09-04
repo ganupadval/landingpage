@@ -14,8 +14,6 @@ const BarChart = () => {
       try {
         const response = await fetch("https://viaje.ai/mainvia_api/");
         const result = await response.json();
-
-        // Extract dates and values
         const fetchedCategories = result.data.map(item => item["0"]);
         const fetchedSeries1 = result.data.map(item => item["1"]);
         const fetchedSeries2 = result.data.map(item => item["2"]);

@@ -6,6 +6,8 @@ const BarChart = () => {
   const [categories, setCategories] = useState([]);
   const [series1, setSeries1] = useState([]);
   const [series2, setSeries2] = useState([]);
+  const [series3, setSeries3] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,10 +19,12 @@ const BarChart = () => {
         const fetchedCategories = result.data.map(item => item["0"]);
         const fetchedSeries1 = result.data.map(item => item["1"]);
         const fetchedSeries2 = result.data.map(item => item["2"]);
+        const fetchedSeries3 = result.data.map(item => item["3"]);
 
         setCategories(fetchedCategories);
         setSeries1(fetchedSeries1);
         setSeries2(fetchedSeries2);
+        setSeries3(fetchedSeries3);
         setLoading(false); 
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -41,7 +45,7 @@ const BarChart = () => {
       type: 'column'
     },
     title: {
-      text: 'Double Bar Graph'
+      text: 'Bar Graph'
     },
     xAxis: {
       categories: categories,
@@ -60,12 +64,16 @@ const BarChart = () => {
       }
     },
     series: [{
-      name: 'Series 1',
+      name: 'Via Booking Count',
       data: series1
     }, {
-      name: 'Series 2',
+      name: 'Main Booking Count',
       data: series2
-    }]
+    }, {
+      name: 'Total Seats',
+      data: series3
+    }
+  ]
   };
 
   return (
